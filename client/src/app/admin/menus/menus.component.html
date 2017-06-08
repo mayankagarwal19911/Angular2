@@ -1,0 +1,108 @@
+<div class="outter-wp">
+    <!--/sub-heard-part-->
+            <div class="sub-heard-part">
+                  <ol class="breadcrumb m-b-0">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="active">Inbox</li>
+                </ol>
+          </div>	
+          <!--/sub-heard-part-->		
+					<!--/inbox-->
+					<div class="inbox-mail">
+									<div class="col-md-4 compose">
+										<form action="#" method="GET">
+												<div class="input-group input-group-in">
+													<input type="text" name="search" class="form-control2 input-search" placeholder="Search...">
+													<span class="input-group-btn">
+														<button class="btn btn-success" type="button"><i class="fa fa-search"></i></button>
+													</span>
+												</div><!-- Input Group -->
+											</form>
+											<h2>Add menu</h2>
+												 <nav class="nav-sidebar">
+                            <div class="grid-1">
+                              <div class="form-body">
+                                <div data-example-id="simple-form-inline"> 
+                                  <form class="form-inline"> 
+                                    <div class="form-group"> 
+                                      <input type="text" name="menu" class="form-control" [(ngModel)]="menu"> 
+                                    </div> 
+                                    <button type="submit" class="btn btn-default" (click)="add()">Add</button> 
+                                 </form> 
+                              </div>
+                              </div>
+                            </div>
+													</nav>																
+														</div>
+														<!-- tab content -->
+														<div class="col-md-8 tab-content tab-content-in">
+														<div class="tab-pane active text-style" id="tab1">
+														  <div class="inbox-right">
+																	
+												<div class="mailbox-content">
+												   <div class="mail-toolbar clearfix">
+													<div class="float-right">
+									<div class="dropdown">
+                    showing {{pagePrefix}} to {{pageSuffix}} of {{totalLength}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="ur cursor" (click)="previous()"><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+                    <span class="ur cursor" (click)="next(5)" *ngIf="disable"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+			            <a href="#" title="" class="btn btn-default" data-toggle="dropdown" aria-expanded="false">
+			                <i class="fa fa-cog icon_8"></i>
+			                <i class="fa fa-chevron-down icon_8"></i>
+			            <div class="ripple-wrapper"></div></a>
+			            <ul class="dropdown-menu float-right" *ngIf="">
+			                <li>
+                        <a href="#" title="">
+                          <i class="fa fa-pencil-square-o icon_9"></i>
+                          Edit
+                        </a>
+			                </li>
+			                <li>
+                        <a href="#" title="">
+                            <i class="fa fa-calendar icon_9"></i>
+                            Schedule
+                        </a>
+			                </li>
+			                <li>
+                        <a href="#" title="">
+                            <i class="fa fa-download icon_9"></i>
+                            Download
+                        </a>
+			                </li>			               
+			                <li>
+                        <a href="#" class="font-red" title="">
+                            <i class="fa fa-times" icon_9=""></i>
+                            Delete
+                        </a>
+			                </li>
+			            </ul>
+			        </div>		        
+			    </div>				
+          </div>
+            <table class="table">
+              <tbody>
+                <tr class="table-row" *ngFor="let menu of menuList; let menuIndex = index" >
+                   <td>
+                      <span class="ur">{{menuIndex+1}}</span>
+                    </td>
+                    <td class="table-text popup">
+                      <span class="popuptext" id="myPopup" *ngIf="showEdit">
+                        <input type="text" class="form-control" name="" [(ngModel)]="menu.menu"/>
+                        <button class="btn btn-default" (click)="edit(menuIndex, menu.id)">Done</button>
+                      </span>
+                      <h5>{{menu.menu}}</h5>
+                    </td>
+                    <td>
+                        <span class="ur cursor" (click)="show(menuIndex)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                    </td>                  
+                      <td>
+                        <span class="ur cursor" (click)="delete(menu.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+		</div>
+	</div>
